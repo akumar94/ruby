@@ -1,2 +1,2 @@
 # ruby
-this is a ruby test
+Documenting the Ruby learning process.
