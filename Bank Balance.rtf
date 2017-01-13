@@ -1,45 +1,39 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-\margl1440\margr1440\vieww10800\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+class Account
+attr_reader :name
+attr_reader :balance
+def initialize(name, balance=100)
+@name = name
+@balance = balance
+end
 
-\f0\fs24 \cf0 class Account\
-attr_reader :name\
-attr_reader :balance\
-def initialize(name, balance=100)\
-@name = name\
-@balance = balance\
-end\
-\
-public\
-\
-def displaybalance(pinnumber)\
-if pinnumber == pin\
-puts "Balance: $#\{@balance\}."\
-else\
-puts pinerror\
-end\
-end\
-\
-def withdraw(pinnumber, amount)\
-if pinnumber == pin\
-balance -= amount\
-puts "Withdrew #\{amount\}. New balance: $#\{@balance\}."\
-else\
-puts pin_error\
-end\
-end\
-\
-private\
-\
-def pin\
-@pin = 1234\
-end\
-\
-def pin_error\
-return "Access denied: incorrect PIN."\
-end\
-end\
-\
-checking_account = Account.new("Aditya", 100000)}
+public
+
+def displaybalance(pinnumber)
+if pinnumber == pin
+puts "Balance: $#{@balance}."
+else
+puts pinerror
+end
+end
+
+def withdraw(pinnumber, amount)
+if pinnumber == pin
+balance -= amount
+puts "Withdrew #{amount}. New balance: $#{@balance}."
+else
+puts pin_error
+end
+end
+
+private
+
+def pin
+@pin = 1234
+end
+
+def pin_error
+return "Access denied: incorrect PIN."
+end
+end
+
+checking_account = Account.new("Aditya", 100000)
